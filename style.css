@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+  font-family: varela;
+}
+
+@font-face {
+  font-family: "varela";
+  src: url("./varela-round.ttf");
+}
+
+button {
+  font-family: varela;
+}
+
+a {
+  color: inherit;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 0.6rem 0;
+  background: #24c4d3;
+}
+
+.header .header-title {
+  color: #fff;
+}
+
+/* GAME STYLES */
+.game-container {
+  width: 100%;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-box {
+  display: flex;
+  align-items: flex-end;
+  width: 70%;
+  background: #e7823f;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+/* CHARECTER */
+.game-box .charecter {
+  display: block;
+  width: 10%;
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  z-index: 99;
+}
+
+/* DYNAMIC CLASS  */
+.game-box .charecter.jumpAnimate {
+  animation: jumpAnim 0.5s linear infinite;
+}
+
+.game-box img {
+  width: 100%;
+}
+
+/* BLOCK */
+.game-box .block {
+  display: block;
+  width: 3.6%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  animation: blockAnim 1.8s linear infinite;
+}
+
+/* BLOCK ANIMATION */
+@keyframes blockAnim {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: 100%;
+  }
+}
+
+/* JUMP ANIMATION */
+@keyframes jumpAnim {
+  0% {
+    bottom: 0;
+  }
+
+  30% {
+    bottom: 140px;
+  }
+
+  60% {
+    bottom: 100px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+/* RESTART PAGE */
+.restart-page {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  flex-direction: column;
+  display: none;
+}
+
+.restart-page .alert-text {
+  margin-bottom: 1.5rem;
+  font-size: 3.5rem;
+}
+
+.restart-page button {
+  padding: 0.8rem 2rem;
+  font-size: 1.5rem;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.restart-page button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.restart-page.show-restart-page {
+  display: flex;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 5.5rem;
+  color: #fff;
+}
